@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BasketballActivity"
+    >
+
+
+    <EditText
+        android:id="@+id/ETInput"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:hint="Minutes"
+        android:inputType="number"
+        android:maxLength="4"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BtnSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ETInput"
+        android:layout_toEndOf="@+id/ETInput"
+        android:text="Set"
+        app:layout_constraintBottom_toBottomOf="@+id/ETInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toEndOf="@+id/ETInput"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/TVCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="64dp"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BtnStartPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="56dp"
+        android:text="start"
+        app:layout_constraintEnd_toStartOf="@+id/BtnReset"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BtnReset" />
+
+    <Button
+        android:id="@+id/BtnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="reset"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVCountdown"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/score_board_team_B"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00008b"
+        android:gravity="center"
+        android:text="@string/_0"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toEndOf="@+id/score_board_team_A"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="32dp"
+        android:hint="Marks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/name_team_b">
+
+        <AutoCompleteTextView
+            android:id="@+id/autocompleteTextView_b"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/IVEditName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_team_b"
+        app:srcCompat="@drawable/ic_round_edit_24" />
+
+    <TextView
+        android:id="@+id/TVvs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:text="Vs"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/name_team_b"
+        app:layout_constraintEnd_toStartOf="@+id/name_team_b"
+        app:layout_constraintTop_toTopOf="@+id/name_team_a"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/name_team_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#ADD8E6"
+        android:text="@string/team_a"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/TVvs"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_board_team_A" />
+
+    <TextView
+        android:id="@+id/score_board_team_A"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="212dp"
+        android:background="#ADD8E6"
+        android:gravity="center"
+        android:text="@string/_0"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        android:background="#00008b"
+        android:text="@string/team_b"
+
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/IVEditName"
+        app:layout_constraintTop_toBottomOf="@+id/score_board_team_B" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="28dp"
+        android:hint="Marks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_team_a">
+
+        <AutoCompleteTextView
+            android:id="@+id/autocompleteTextView_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/IVShare"
+        android:layout_width="35dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/ic_baseline_share_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
